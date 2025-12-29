@@ -1,0 +1,25 @@
+////////////////////////////////////////////////////////////////
+//
+// LRM:         SV2012
+// Page:        614
+// Description: command line input system function
+// Note:        
+//
+////////////////////////////////////////////////////////////////
+
+module sv12_lrm_p0614_initial_begin;
+
+  initial begin
+    if ($test$plusargs("HELLO")) $display("Hello argument found.");
+    if ($test$plusargs("HE")) $display("The HE subset string is detected.");
+	if ($test$plusargs("H")) $display("Argument starting with H found.");
+	if ($test$plusargs("HELLO_HERE")) $display("Long argument.");
+    if ($test$plusargs("HI")) $display("Simple greeting.");
+    if ($test$plusargs("LO")) $display("Does not match.");
+  end
+
+  // Hello argument found.
+  // The HE subset string is detected.
+  // Argument starting with H found.
+
+endmodule : sv12_lrm_p0614_initial_begin
